@@ -5,6 +5,61 @@ CHANGES IN VERSION 1.5 (from 1.4.?)
 
 - add Tapster support for some more touch methods
 
+CHANGES IN VERSION 1.4.16 (from 1.4.15)
+===================================
+
+#### iOS
+- fix for safari and webview issues for 9.2
+
+CHANGES IN VERSION 1.4.15 (from 1.4.14)
+===================================
+
+#### iOS
+- fix for safari and webview issues in iOS9+
+
+CHANGES IN VERSION 1.4.14 (from 1.4.13)
+===================================
+
+#### iOS
+- support for iOS9.2
+- fix for webview, resolving context issues in iOS9+
+
+#### Selendroid
+- upgrade to Selendroid 0.17.0.
+
+CHANGES IN VERSION 1.4.13 (from 1.4.12)
+===================================
+
+#### Chromedriver
+- Setting appium-chromedriver version to 2.3.2 as it is stable on Node version 0.10.32
+
+CHANGES IN VERSION 1.4.12 (from 1.4.11)
+===================================
+
+#### iOS
+- support for iOS9.1
+- fix for iOS simulator with similar device names on Xcode 7
+- fix to idevicelog (real device) to record logs only for device under test
+
+CHANGES IN VERSION 1.4.11 (from 1.4.10)
+===================================
+
+#### iOS
+- fix for iOS simulator selector for Xcode 7
+- fix for selecting default device for iOS9
+
+CHANGES IN VERSION 1.4.10 (from 1.4.9)
+===================================
+
+#### General
+- fixed bug in a config file accidentally published in version 1.4.9
+
+CHANGES IN VERSION 1.4.9 (from 1.4.8)
+===================================
+
+#### iOS
+- support for iOS9 and xcode 7
+- at this point instruments-without-delay is not supported for xcode-7
 
 CHANGES IN VERSION 1.4.8 (from 1.4.7)
 ===================================

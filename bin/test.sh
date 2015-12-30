@@ -11,6 +11,8 @@ ios82_only=false
 ios83_only=false
 ios84_only=false
 ios9_only=false
+ios91_only=false
+ios92_only=false
 android_only=false
 android_chrome=false
 selendroid_only=false
@@ -61,6 +63,12 @@ for arg in "$@"; do
     elif [ "$arg" = "--ios9" ]; then
         ios9_only=true
         all_tests=false
+    elif [ "$arg" = "--ios91" ]; then
+        ios91_only=true
+        all_tests=false
+    elif [ "$arg" = "--ios92" ]; then
+        ios92_only=true
+        all_tests=false
     elif [ "$arg" = "--real-device" ]; then
         real_device=true
     elif [ "$arg" =~ " " ]; then
@@ -85,7 +93,7 @@ run_ios_tests() {
         DEVICE=$2 REAL_DEVICE=true time $appium_mocha -g $tag_regex -i \
            test/functional/ios
     else
-       DEVICE=$2 time $appium_mocha -g $3 -i \
+        DEVICE=$2 time $appium_mocha -g $3 -i \
            test/functional/common \
            test/functional/ios
     fi
@@ -125,6 +133,14 @@ fi
 
 if $ios9_only || $all_tests; then
     run_ios_tests "9" "ios9" "@skip-ios9|@skip-ios84|@skip-ios82|@skip-ios81|@skip-ios8|@skip-ios-all|@skip-ios7up"
+fi
+
+if $ios91_only || $all_tests; then
+    run_ios_tests "9.1" "ios91" "@skip-ios91|@skip-ios9|@skip-ios84|@skip-ios82|@skip-ios81|@skip-ios8|@skip-ios-all|@skip-ios7up"
+fi
+
+if $ios92_only || $all_tests; then
+    run_ios_tests "9.2" "ios92" "@skip-ios92|@skip-ios-all|@skip-ios7up"
 fi
 
 if $android_only || $all_tests; then
